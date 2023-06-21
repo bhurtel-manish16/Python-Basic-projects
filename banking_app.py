@@ -6,7 +6,10 @@ import random
 import pyqrcode
 from fpdf import FPDF
 
-
+"""
+For this project please install xampp ( https://www.apachefriends.org/ ) for the database.
+Along with this, install libraries mysql, pycode, cryptography and pdf using pip
+"""
 mydb = msc.connect(
 	host = "localhost",
 	user = "root",
@@ -15,12 +18,13 @@ mydb = msc.connect(
 	)
 
 con = mydb.cursor()
-"""
+
+
 #Database created
 con.execute("CREATE DATABASE userdata")
-"""
+
 #Creating table
-#con.execute("CREATE TABLE login_data(Name VARCHAR(250), Email VARCHAR(250), Password VARCHAR(250))")
+con.execute("CREATE TABLE login_data(Name VARCHAR(250), Email VARCHAR(250), Password VARCHAR(250))")
 
 def get_user_choice():
 	print("-----------------------------------------")
